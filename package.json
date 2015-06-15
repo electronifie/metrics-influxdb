@@ -1,0 +1,31 @@
+{
+  "name": "metrics-influxdb",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "cconfig": "^0.1.1",
+    "instruments-client": "git+ssh://git@github.com/electronifie/instruments-client.git#v0.0.5"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "should": "^6.0.3",
+    "sinon": "^1.14.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/electronifie/metrics-influxdb"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/electronifie/metrics-influxdb/issues"
+  },
+  "homepage": "https://github.com/electronifie/metrics-influxdb"
+}
