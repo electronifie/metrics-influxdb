@@ -1,4 +1,5 @@
-var config = require('cconfig')();
+var path = require('path');
+var config = require('cconfig')(path.join(process.env.PWD, 'config.json'));
 
 var influxdbConfig = config.INFLUXDB ? config.INFLUXDB : config.metrics ? config.metrics.INFLUXDB : undefined;
 
@@ -12,11 +13,11 @@ if ( ! influxdbConfig.DB) throw new Error('metrics-influxdb requires a DB proper
 var InstrumentsClient = require('instruments-client');
 
 var instruments = InstrumentsClient.createClient({
-  host: config.INFLUXDB.HOST,
-  port: config.INFLUXDB.PORT,
-  username: config.INFLUXDB.USER,
-  password: config.INFLUXDB.PASS,
-  db: config.INFLUXDB.DB
+  host: influxdbConfig.HOST,
+  port: influxdbConfig.PORT,
+  username: influxdbConfig.USER,
+  password: influxdbConfig.PASS,
+  db: influxdbConfig.DB
 });
 
 module.exports = instruments;
