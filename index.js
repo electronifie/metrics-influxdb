@@ -1,5 +1,13 @@
+var cconfig = require('cconfig');
 var path = require('path');
-var config = require('cconfig')(path.join(process.env.PWD, 'config.json'));
+
+var config;
+
+if (process.env.METEOR_SETTINGS) {
+  config = JSON.parse(process.env.METEOR_SETTINGS);
+} else {
+  config = cconfig(path.join(process.env.PWD, 'config.json'));
+}
 
 var influxdbConfig = config.INFLUXDB ? config.INFLUXDB : config.metrics ? config.metrics.INFLUXDB : undefined;
 
