@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "cconfig": "^0.1.1",
-    "instruments-client": "git+ssh://git@github.com/electronifie/instruments-client.git#v0.0.8"
+    "instruments-client": "git+ssh://git@github.com/electronifie/instruments-client.git#v0.0.10"
   },
   "devDependencies": {
     "mocha": "^2.2.5",
